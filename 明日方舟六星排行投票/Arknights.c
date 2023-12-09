@@ -1,11 +1,11 @@
 #include "Arknights.h"
-void PrintSort(char* name[MAX], WinRate winRate[MAX])
+void PrintSort(char* name[MAX], WinRate winRate[MAX], int count[MAX])
 {
 	printf("您的投票结果为：\n");
-	printf("%s %15s      %s\n", "排名", "干员名", "胜率");
+	printf("%s %15s      %6s %10s\n", "排名", "干员名", "胜率","出现次数");
 	for (int i = MAX - 1; i >= 0; i--)
 	{
-		printf(" %2d  %15s     %.2lf%%\n", MAX - i, name[winRate[i].index], winRate[i].winRate * 100);
+		printf(" %2d  %15s     %.2lf%% %8d\n", MAX - i, name[winRate[i].index], winRate[i].winRate * 100, count[winRate[i].index]);
 	}
 }
 void Voke(char* name[MAX], int mark[MAX], int count[MAX])
@@ -13,7 +13,7 @@ void Voke(char* name[MAX], int mark[MAX], int count[MAX])
 	srand(time(NULL));
 	int i, j, s;
 	char c;
-	for (int k = 0; k < MAX * MAX; k++)
+	for (int k = 0; k < ((MAX + 1) * MAX) / 2; k++)
 	{
 		system("cls");
 		do
@@ -36,14 +36,14 @@ void Voke(char* name[MAX], int mark[MAX], int count[MAX])
 		{
 			mark[i]++;
 			printf("你投给了：%s\n", name[i]);
-			printf("当前进度：%d/%d\n", k + 1, MAX * MAX);
+			printf("当前进度：%d/%d\n", k + 1, ((MAX + 1) * MAX) / 2);
  			system("pause");
 		}
 		else if (c == 'd')
 		{
 			mark[j]++;
 			printf("你投给了：%s\n", name[j]);
-			printf("当前进度：%d/%d\n", k + 1, MAX * MAX);
+			printf("当前进度：%d/%d\n", k + 1, ((MAX + 1) * MAX) / 2);
 			system("pause");
 		}
 		else

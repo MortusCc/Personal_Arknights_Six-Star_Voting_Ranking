@@ -11,7 +11,7 @@ typedef struct winRate
 	double winRate;
 	int index;
 }WinRate;
-void PrintSort(char* name[MAX], WinRate winRate[MAX]);
+void PrintSort(char* name[MAX], WinRate winRate[MAX], int count[MAX]);
 void Voke(char* name[MAX], int mark[MAX], int count[MAX]);
 void Rank(char* name[MAX], int mark[MAX], int count[MAX], WinRate* winRate);
 void BubbleSort(char* name[MAX], WinRate* winRate);

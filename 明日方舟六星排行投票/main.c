@@ -11,7 +11,7 @@ int main()
 	}
 	Voke(name, mark, count);
 	Rank(name, mark, count, winRate);
-	PrintSort(name, winRate);
+	PrintSort(name, winRate, count);
 	system("pause");
 	return 0;
 }
